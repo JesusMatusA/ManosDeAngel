@@ -1,0 +1,135 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.navigatorBarContainer {
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  background-color: red;
+}
+
+.logoContainer {
+  display: flex;
+  width: 10%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+
+.nameContainer {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+.imgLogo {
+  width: 70px;
+  height: 70px;
+}
+
+.bodyContainer {
+  display: flex;
+  width: 100%;
+  height: 81vh;
+  background-color: blue;
+}
+
+.optionsContainer {
+  display: flex;
+  width: 15%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgrey;
+}
+
+.menuContainer {
+  display: flex;
+  width: 95%;
+  height: 97%;
+  border: 2px solid black;
+  border-radius: 5%;
+  flex-wrap: wrap;
+  background-color: chocolate;
+}
+
+.imgRecepcionistContainer {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 13%;
+  background-color: cadetblue;
+}
+
+.recepcionistLogo {
+  width: 80%;
+  height: 80%;
+}
+
+.buttonsContainer {
+  display: flex;
+  width: 100%;
+  height: 25%;
+  background-color: red;
+  flex-wrap: wrap;
+}
+
+.btnOption {
+  display: flex;
+  width: 100%;
+  height: 31%;
+  background-color: blueviolet;
+}
+
+.logoutContainer {
+  display: flex;
+  width: 100%;
+  height: 45%;
+  background-color: darkolivegreen;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.btnLogout {
+  display: flex;
+  width: 50%;
+  height: 10%;
+  margin: 0 5px 5px 0;
+}
+/* .btnLogout {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: aqua;
+} */
+/* .recepcionistLogo {
+  display: flex;
+  width: 20%;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+} */
+.showsContainer {
+  display: flex;
+  width: 85%;
+  height: 100%;
+  background-color: honeydew;
+}
+
+.footerContainer {
+  display: flex;
+  width: 100%;
+  height: 4vh;
+  background-color: green;
+}
