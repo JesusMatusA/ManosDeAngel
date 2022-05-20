@@ -291,6 +291,9 @@
   border-color: #234567;
 }
 
+.Diagnosis {
+  height: 12vh;
+}
 /* .btnAddAppointment {
   margin-top: 1vh;
   width: 14vh;

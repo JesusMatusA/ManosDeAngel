@@ -92,43 +92,39 @@
 
           <div class="formContainer">
             <div class="formAdd">
-              <form action="results.php" method="post" class="form">
+              <form
+                action="../recepcionistFunctions/recepcionistAddUpdate.php"
+                method="post"
+                class="form"
+              >
                 <div class="form">
                   <input
                     type="text"
                     placeholder="id del cliente"
-                    name=""
-                    id=""
-                    class="inputTextDesign"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Nomre de la persona a atender"
-                    name=""
-                    id=""
-                    class="inputTextDesign"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Edad"
-                    name=""
+                    name="idPatient"
                     id=""
                     class="inputTextDesign"
                   />
                   <input
                     type="date"
                     placeholder="Fecha"
-                    name=""
+                    name="patientDate"
                     id=""
                     class="inputTextDesign"
                   />
                   <input
                     type="time"
                     placeholder="Hora"
-                    name=""
+                    name="patientTimeDate"
                     id=""
                     class="inputTextDesign"
                   />
+                  <textarea
+                    placeholder="Diagnóstico"
+                    name="Diagnosis"
+                    id=""
+                    class="inputTextDesign Diagnosis"
+                  ></textarea>
                   <button class="buttonAdd">
                     <span>Agendar</span>
                     <svg

@@ -1,5 +1,5 @@
 <?php 
-include("../functions/connect.php");
+include("../DBConnection/connect.php");
 
 ?>
 <script>

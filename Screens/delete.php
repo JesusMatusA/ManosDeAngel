@@ -92,7 +92,7 @@
 
           <div class="formContainer">
             <div class="formAdd">
-              <form action="../functions/results.php" method="post" class="form">
+              <form action="../recepcionistFunctions/recepcionistDelete.php" method="post" class="form">
                 <div class="form">
                   <input
                     type="text"
