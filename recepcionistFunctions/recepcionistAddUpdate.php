@@ -1,17 +1,5 @@
 <?php 
 include("../DBConnection/connect.php");
-
-?>
-<script>
-    console.log("0")
-</script>
-<?php
-
-    ?>
-    <script>
-        console.log("1")
-    </script>
-    <?php
     $idPatient = trim($_POST['idPatient']);
     $patientDate = trim($_POST['patientDate']);
     $patientTimeDate = trim($_POST['patientTimeDate']);
@@ -22,18 +10,14 @@ include("../DBConnection/connect.php");
     if($resultadoAdd){
         ?>
         <script>
-            alert("Se a incertado el juego correctamente.")
+            alert("Se a creado la cita correctamente.")
         </script>
         <?php
     }else{
         ?>
         <script>
-            alert("A ocurrido un error en la insercion.")
+            alert("A ocurrido un error en la cita.")
         </script>
         <?php
     }
-    
-        
-    
-
 ?>
