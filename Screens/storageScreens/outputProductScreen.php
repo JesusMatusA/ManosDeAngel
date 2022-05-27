@@ -2,19 +2,22 @@
 include("../../Components/requeriments.php ")
 ?>
 <?php
-include("../../Components/nav-container.php")
+include("../../Components/storageComponents/storageStyles.php")
+?>
+<?php
+include("../../Components/storageComponents/nav-container.php")
 ?>
 
 <div class="bodyContainer">
     <div class="optionsContainer">
         <?php
-            include("../../Components/barOptions-container.php")
+            include("../../Components/storageComponents/barOptions-container.php")
         ?>
     </div>
     <div class="showsContainer">
         <div class="screenOptionContainer">
           <div class="nameOptionContainer">
-            <div class="option">Reagendar una cita</div>
+            <div class="option">Registrar Salida de Producto</div>
           </div>
 
           <div class="formContainer">
@@ -22,49 +25,30 @@ include("../../Components/nav-container.php")
               <div class="form">
                 <input
                   type="text"
-                  placeholder="id del cliente"
-                  name=""
+                  placeholder="Nombre del producto"
+                  name="productName"
                   id=""
                   class="inputTextDesign"
+                  REQUIRED
                 />
                 <input
                   type="text"
-                  placeholder="Nomre de la persona a atender"
-                  name=""
+                  placeholder="Cantidad de salida"
+                  name="numberOfProducts"
                   id=""
                   class="inputTextDesign"
+                  REQUIRED
                 />
                 <input
                   type="text"
-                  placeholder="Edad"
-                  name=""
+                  placeholder="Persona que solicita"
+                  name="personRequesting"
                   id=""
                   class="inputTextDesign"
+                  REQUIRED
                 />
-                <input
-                  type="date"
-                  placeholder="Fecha"
-                  name=""
-                  id=""
-                  class="inputTextDesign"
-                />
-                <input
-                  type="time"
-                  placeholder="Hora"
-                  name=""
-                  id=""
-                  class="inputTextDesign"
-                />
-                <h5>Foto de analisis previos</h5>
-                <input
-                  type="file"
-                  value="Ingrese Foto de los Rayos X"
-                  name=""
-                  id=""
-                  class="btnPhoto"
-                />
-                <button class="buttonAdd">
-                  <span>Reagendar</span>
+                <button class="buttonAdd" name="outputProduct">
+                  <span>Aplicar</span>
                   <svg
                     width="34"
                     height="34"

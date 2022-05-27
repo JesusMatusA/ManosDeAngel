@@ -1,52 +1,45 @@
-<div class="menuContainer">
+        <div class="menuContainer">
           <div class="userContainer">
             <div class="imgRecepcionistContainer">
               <img
-                src="../img/recepcionist.png"
+                src="../../img/storage.png"
                 alt=""
                 class="recepcionistLogo"
               />
             </div>
-            <div class="userType">Recepcionista</div>
+            <div class="userType">Almacen</div>
           </div>
-          <div class="buttonsContainer" id="btnAddDateScreen">
-            <button class="btnOption">
-              <span>Agendar Cita</span>
+          <div class="buttonsContainer">
+            <button class="btnOption" id="btnAddProductScreen">
+              <span>Añadir Producto</span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>
               </svg>
             </button>
-            <button class="btnOption" id="btnAUpdateDateScreen">
-              <span>Reagendar Cita</span>
+            <button class="btnOption" id="btnOutputProductScreen">
+              <span>Registrar Salida</span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>
               </svg>
             </button>
-            <button class="btnOption" id="btnSeeDateScreen">
-              <span>Visualizar Citas</span>
+            <button class="btnOption" id="btnSeeProductScreen">
+              <span>Visualizar Productos</span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>
               </svg>
             </button>
-            <button class="btnOption" id="btnDeleteDateScreen">
-              <span>Eliminar Citas</span>
+            <button class="btnOption" id="btnModifyProductScreen">
+              <span>Modificar Producto</span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>
               </svg>
             </button>
-            <button class="btnOption" id="btnAddClientScreen">
-              <span>Registrar Cliente</span>
-              <svg viewBox="0 0 13 10" height="10px" width="15px">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-              </svg>
-            </button>
-            <button class="btnOption" id="btnUpdateClientScreen">
-              <span>Actualizar Cliente</span>
+            <button class="btnOption" id="btnDeleteProductScreen">
+            <span>Eliminar Producto</span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>
@@ -62,5 +55,5 @@
             </button>
           </div>
         </div>
-        
-        <script src="../Scripts/mobilityRecepcionist.js"></script>
+
+        <script src="../../Scripts/mobilityStorage.js"></script>

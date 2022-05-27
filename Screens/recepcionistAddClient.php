@@ -2,6 +2,9 @@
 include("../Components/requeriments.php")
 ?>
 <?php
+include("../Components/recepcionistStyles.php")
+?>
+<?php
 include("../Components/nav-container.php")
 ?>
 
