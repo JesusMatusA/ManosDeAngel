@@ -1,25 +1,20 @@
 <?php
-include("../../Components/requeriments.php ")
-?>
-<?php
-include("../../Components/storageComponents/storageStyles.php")
-?>
-<?php
-include("../../Components/storageComponents/nav-container.php")
+  include("../../Components/requeriments.php ");
+  include("../../Components/storageComponents/storageStyles.php");
+  include("../../Components/storageComponents/nav-container.php");
 ?>
 
 <div class="bodyContainer">
     <div class="optionsContainer">
-        <?php
-            include("../../Components/storageComponents/barOptions-container.php")
-        ?>
+      <?php
+        include("../../Components/storageComponents/barOptions-container.php");
+      ?>
     </div>
     <div class="showsContainer">
         <div class="screenOptionContainer">
           <div class="nameOptionContainer">
             <div class="option">Notas De la Cita</div>
           </div>
-
           <div class="formContainer">
             <div class="formAdd">
               <div class="form">
@@ -74,8 +69,6 @@ include("../../Components/storageComponents/nav-container.php")
       </div>
 </div>
 <?php
-include("../../Components/footer-container.php")
-?>
-<?php
-include("../../Components/endCode.php")
+  include("../../Components/footer-container.php");
+  include("../../Components/endCode.php");
 ?>

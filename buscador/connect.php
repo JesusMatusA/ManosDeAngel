@@ -1,5 +1,5 @@
 <?php
-    $connect = new mysqli("localhost", "root", "", "clinicamanosdeangel");
+    $connect = new mysqli("localhost", "root", "", "manosdeangel");
 
     if($connect){
         ?>

@@ -1,11 +1,7 @@
 <?php
-include("../../Components/requeriments.php ")
-?>
-<?php
-include("../../Components/storageComponents/storageStyles.php")
-?>
-<?php
-include("../../Components/storageComponents/nav-container.php")
+  include("../../Components/requeriments.php ");
+  include("../../Components/storageComponents/storageStyles.php");
+  include("../../Components/storageComponents/nav-container.php");
 ?>
 
 <div class="bodyContainer">
@@ -67,8 +63,6 @@ include("../../Components/storageComponents/nav-container.php")
       </div>
 </div>
 <?php
-include("../../Components/footer-container.php")
-?>
-<?php
-include("../../Components/endCode.php")
+  include("../../Components/footer-container.php");
+  include("../../Components/endCode.php");
 ?>
