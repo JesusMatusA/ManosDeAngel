@@ -38,12 +38,16 @@ if(!empty($_POST))
   
       $aKeyword = explode(" ", $_POST['buscar']);
       $filtro = "WHERE nombres LIKE LOWER('%".$aKeyword[0]."%') OR descripcion LIKE LOWER('%".$aKeyword[0]."%')";
-      $query ="SELECT * FROM pacientes WHERE nombres LIKE LOWER('%".$aKeyword[0]."%') OR aPaterno LIKE LOWER('%".$aKeyword[0]."%')";
+      $query ="SELECT * FROM pacientes WHERE nombres LIKE LOWER('%".$aKeyword[0]."%') 
+      OR aPaterno LIKE LOWER('%".$aKeyword[0]."%' OR aMaterno LIKE LOWER('%".$aKeyword[0]."%'))";
   
 
      for($i = 1; $i < count($aKeyword); $i++) {
         if(!empty($aKeyword[$i])) {
-            $query .= " OR nombres LIKE '%" . $aKeyword[$i] . "%' OR aPaterno LIKE '%" . $aKeyword[$i] . "%'";
+            $query .= " 
+            OR nombres LIKE '%" . $aKeyword[$i] . "%' 
+            OR aPaterno LIKE '%" . $aKeyword[$i] . "%'
+            OR aMaterno LIKE '%" . $aKeyword[$i] . "%'";
         }
       }
      
@@ -60,14 +64,22 @@ if(!empty($_POST))
         <thead>
         <tr style='background-color:midnightblue; color:#FFFFFF;'>
         <th> # </th>        
-        <th> Titulo </th>
-                <th> Departamento </th>
+        <th> Nombres </th>
+        <th> ApellidoP</th>
+        <th> ApellidoM</th>
+        <th> Editar</th>
         </tr>
         </thead>
         ";
         While($row = $result->fetch_assoc()) {   
             $row_count++;   
-            echo "<tr><td>".$row_count." </td><td>". resaltar_frase($row['nombres'] ,$_POST['buscar']) . "</td><td>". resaltar_frase($row['aPaterno'] ,$_POST['buscar']) . "</td></tr>";
+            echo "<tr>
+            <td>".$row_count." </td>
+            <td>". resaltar_frase($row['nombres'] ,$_POST['buscar']) . "</td>
+            <td>". resaltar_frase($row['aPaterno'] ,$_POST['buscar']) . "</td>
+            <td>". resaltar_frase($row['aMaterno'] ,$_POST['buscar']) . "</td>
+            <td>". resaltar_frase($row['aMaterno'] ,$_POST['buscar']) . "</td>
+            </tr>";
         }
         echo "</table>";
 	
@@ -80,7 +92,13 @@ if(!empty($_POST))
         echo "<br><br><table class='table table-striped'>";
         While($row = $result->fetch_assoc()) {   
             $row_count++;   
-            echo "<tr><td>".$row_count." </td><td>". resaltar_frase($row['nombres'] ,$_POST['buscar']) . "</td><td>". resaltar_frase($row['aPaterno'] ,$_POST['buscar']) . "</td></tr>";
+            echo "<tr>
+            <td>".$row_count." </td>
+            <td>". resaltar_frase($row['nombres'] ,$_POST['buscar']) . "</td>
+            <td>". resaltar_frase($row['aPaterno'] ,$_POST['buscar']) . "</td>
+            <td>". resaltar_frase($row['aMaterno'] ,$_POST['buscar']) . "</td>
+            <td>". resaltar_frase($row['aMaterno'] ,$_POST['buscar']) . "</td>
+            </tr>";
         }
         echo "</table>";
 	

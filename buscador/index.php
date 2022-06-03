@@ -36,7 +36,7 @@ include("./connect.php");
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
-<title>Consulta basica</title>
+<title>Buscador</title>
 </head>
 <body>
 
@@ -50,7 +50,7 @@ include("./connect.php");
 <!-- buscador basico -->
 <nav class="navigatorBarContainer">
       <div class="logoContainer">
-        <img src="/img/logo.png" alt="" class="imgLogo" />
+        <img src="../img/logo.png" alt="" class="imgLogo" />
       </div>
       <div class="nameContainer">Manos de Angel Clínica y Spa</div>
     </nav>
