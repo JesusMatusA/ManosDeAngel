@@ -12,27 +12,26 @@
     <div class="showsContainer">
         <div class="screenOptionContainer">
             <div class="nameOptionContainer">
-                <div class="option">Lista de Citas</div>
+                <div class="option">Lista de Pacientes</div>
             </div>
             <div class="listPatientDate">
-                <form action="searchDateScreen.php" method="get">
+                <form action="searchClientScreen.php" method="get">
                     <input type="search" name="search" placeholder="Buscar por nombre">
                     <button type="submit" name="submit">Buscar</button>
                 </form>
             </div>
             <div class="formContainer">
-                <table class="tableD">
-                    <tr class="tableTRD">
-                        <th class="tableTHD">Paciente</th>
-                        <th class="tableTHD">Doctor</th>
-                        <th class="tableTHD">Fecha</th>
-                        <th class="tableTHD">Hora</th>
-                        <th class="tableTHDL">Acción</th>
+                <table class="tableC">
+                    <tr class="tableTRC">
+                        <th class="tableTHC">Nombre</th>
+                        <th class="tableTHC">Correo</th>
+                        <th class="tableTHC">Teléfono</th>
+                        <th class="tableTHCL">Acción</th>
                     </tr>
                     <?php
                         include("../../DBConnection/connect.php");
                         //ver cuantos registros coinciden con la busqueda
-                        $query = "SELECT COUNT(*) AS total FROM pacientes p INNER JOIN citas c on p.Id_Paciente = c.Id_Paciente";
+                        $query = "SELECT COUNT(*) AS total FROM pacientes";
                         $total_register = null;
                         //obtener el numero de registros en la variable $total_register
                         foreach($connection->query($query) as $row){
@@ -40,7 +39,7 @@
                         }
                         //numero de registros por pagina
                         $por_pagina=6;
-                        //comprobar en que página se encuentra
+                        //comprobar en que página se encuetnra
                         if(empty($_GET['page'])){
                             $pagina = 1;
                         }else{
@@ -51,33 +50,30 @@
                         //calcular el total de páginas que habrá
                         $total_paginas = ceil($total_register / $por_pagina);
                         //consulta que trae los datos de los registros desde la página $desde hasta $por_pagina
-                        //trae los datos del paciente y el doctor
-                        $query = "SELECT c.Id_Cita, p.Id_Paciente, p.nombres as Pnombre, p.aPaterno as PaPaterno, p.aMaterno as PaMaterno, 
-                            d.nombres as Dnombre, d.aPaterno as DaPaterno, d.aMaterno as DaMaterno, fecha_Cita, hora_Cita 
-                            FROM pacientes p 
-                            INNER JOIN citas c on p.Id_Paciente = c.Id_Paciente 
-                            INNER JOIN doctores o ON c.Id_Doctor = o.Id_Doctor
-                            INNER JOIN empleados d ON o.Id_Empleado = d.Id_Empleado
-                            ORDER BY p.Id_Paciente ASC LIMIT $desde,$por_pagina";
-                        //generar las filas de la tabla
-                        foreach($connection->query($query) as $fila){
-                            ?>
-                                <tr class="tableTRD">
-                                    <td class="tableTDD">
-                                        <?php echo $fila['Pnombre']." ".$fila['PaPaterno']." ".$fila['PaMaterno'];?>
-                                    </td>
-                                    <td class="tableTDD">
-                                        <?php echo $fila['Dnombre']." ".$fila['DaPaterno']." ".$fila['DaMaterno'];?>
-                                    </td>
-                                    <td class="tableTDD"><?php echo $fila['fecha_Cita']?></td>
-                                    <td class="tableTDD"><?php echo $fila['hora_Cita']?></td>
-                                    <td class="tableTDDL">
-                                        <a class="link_a" href="UpdateDateScreen.php?Id=<?php echo $fila['Id_Cita']?>">Reagendar</a>
-                                        |
-                                        <a class="link_a" href="DeleteDateScreen.php?Id=<?php echo $fila['Id_Cita']?>">Eliminar</a>
-                                    </td>
-                                </tr>
-                            <?php
+                        if($result = $connection->query($query)){
+
+                            if($result->fetchColumn() > 0){
+
+                                $query = "SELECT Id_Paciente, nombres, aPaterno, aMaterno, correo, telefono FROM pacientes 
+                                    ORDER BY Id_Paciente ASC LIMIT $desde,$por_pagina";
+                                foreach($connection->query($query) as $fila){
+                                    ?>
+                                    <tr class="tableTRC">
+                                        <td class="tableTDC"><?php echo $fila['nombres']." ".$fila['aPaterno']." ".$fila['aMaterno'];?>
+                                        </td>
+                                        <td class="tableTDC"><?php echo $fila['correo']?></td>
+                                        <td class="tableTDC"><?php echo $fila['telefono']?></td>
+                                        <td class="tableTDCL">
+                                            <a class="link_a" href="AddDateScreen.php?Id=<?php echo $fila['Id_Paciente']?>">Agendar Cita</a>
+                                            |
+                                            <a class="link_a" href="UpdateClientScreen.php?Id=<?php echo $fila['Id_Paciente']?>">Editar</a>
+                                            |
+                                            <a class="link_a" href="DeleteClientScreen.php?Id=<?php echo $fila['Id_Paciente']?>">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
                         }
                     ?>
                 </table>
@@ -90,8 +86,8 @@
                     ?>
                     <li><a href="?page=<?php echo 1;?>"> << </a></li>
                     <li><a href="?page=<?php echo ($pagina-1);?>"> < </a></li>
-                    <?php
-                        } 
+                    <?php 
+                        }
                         //coloca dinamicamente el numero de paginas en el paginador
                         for ($i=1; $i <= $total_paginas; $i++) { 
                             if($i == $pagina)
