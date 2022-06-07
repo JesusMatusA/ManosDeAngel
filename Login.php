@@ -47,10 +47,6 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined"
         />
-        <!-- <link
-            href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&family=Lato:ital,wght@1,300&family=Roboto+Flex:opsz@8..144&display=swap"
-            rel="stylesheet"
-        /> -->
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
             rel="stylesheet"

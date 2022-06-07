@@ -2,47 +2,21 @@
   include("../../Components/requeriments.php");
   include("../../Components/recepcionistComponents/recepcionistStyles.php");
   include("../../Components/recepcionistComponents/nav-container.php");
-  include("../../DBConnection/connect.php");
-
-  if(!empty($_POST)){
-    $name = ucwords(strtolower($_POST['namePatient']));
-    $middlename = ucwords(strtolower($_POST['middleName']));
-    $lastname = ucwords(strtolower($_POST['lastName']));
-    $date = $_POST['patientDate'];
-    $hour = $_POST['patientTimeDate'];
-    $diagnosis = ucfirst(strtolower($_POST['Diagnosis']));
-
-    $query = "SELECT count(*) FROM pacientes WHERE nombres=$name AND aPaterno = $middlename AND aMaterno = $lastname";
-    if($result = $connection->query($query)){
-      if($result->fetchColumn() > 0){
-        $query = "SELECT Id_Paciente FROM paciente WHERE nombres=$name AND aPaterno = $middlename AND aMaterno = $lastname";
-        foreach($connection->query($query) as $fila){
-          $qry = "INSERT INTO citas(Id_Cita, Id_Paciente, fecha_Cita, hora_Cita, diagnostico) VALUES(null, :idPat, :date, :hour, :diagnosis)"; 
-          $stmt = $connection->prepare($qry);
-          $stmt->bindParam(':idPat', $fila['Id_Paciente'], PDO::PARAM_INT);
-          $stmt->bindParam(':date', $date, PDO::PARAM_STR);
-          $stmt->bindParam(':hour', $hour, PDO::PARAM_STR);
-          $stmt->bindParam(':diagnosis', $diagnosis, PDO::PARAM_STR);
-        }
-        
-      }
-    }
-  }
 ?>
-
 <div class="bodyContainer">
     <div class="optionsContainer">
-        <?php
+      <?php
         include("../../Components/recepcionistComponents/barOptions-container.php");
       ?>
     </div>
     <div class="showsContainer">
         <div class="screenOptionContainer">
             <div class="nameOptionContainer">
-                <div class="option">Agendar una cita</div>
+                <div class="option">Bienvenid@</div>
             </div>
             <div class="formContainer">
                 <div class="formAdd">
+<<<<<<< HEAD
                     <form action="" method="post" class="form">
                         <div class="form">
                             <input type="text" placeholder="Nombre(s) del paciente" name="namePatient" autocapi
@@ -81,9 +55,10 @@
                 </button>
                         </div>
                     </form>
+=======
+>>>>>>> f3672f7851392f505e63756fd49dbbc19cbff8ab
                 </div>
             </div>
-            <div class="underContainer"></div>
         </div>
     </div>
 </div>
