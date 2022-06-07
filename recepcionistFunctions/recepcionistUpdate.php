@@ -1,5 +1,6 @@
 <?php 
-include("../DBConnection/connect.php");
+    include("../../DBConnection/connect.php");
+    
     $idDate = trim($_POST['idDate']);
     $patientDateUpdate = trim($_POST['patientDateUpdate']);
     $patientTimeDateUpdate = trim($_POST['patientTimeDateUpdate']);

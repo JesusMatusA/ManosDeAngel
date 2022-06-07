@@ -5,22 +5,22 @@ let btnModifyScreen = document.getElementById("btnModifyProductScreen");
 let btnDeletesScreen = document.getElementById("btnDeleteProductScreen");
 
 btnAddScreen.addEventListener(
-  "click",
-  () => (location.href = "../storageScreens/addProductScreen.php")
+    "click",
+    () => (location.href = "../storageScreens/addProductScreen.php")
 );
 btnOutputScreen.addEventListener(
-  "click",
-  () => (location.href = "../storageScreens/outputProductScreen.php")
+    "click",
+    () => (location.href = "../storageScreens/outputProductScreen.php")
 );
 btnSeeScreen.addEventListener(
-  "click",
-  () => (location.href = "../storageScreens/firstScreen.php")
+    "click",
+    () => (location.href = "../storageScreens/firstScreen.php")
 );
 btnModifyScreen.addEventListener(
-  "click",
-  () => (location.href = "../storageScreens/modifyProductScreen.php")
+    "click",
+    () => (location.href = "../storageScreens/modifyProductScreen.php")
 );
 btnDeletesScreen.addEventListener(
-  "click",
-  () => (location.href = "../storageScreens/deleteProductScreen.php")
+    "click",
+    () => (location.href = "../storageScreens/deleteProductScreen.php")
 );

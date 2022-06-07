@@ -1,3 +1,5 @@
+
+
 <style>
   th, td{
     text-align: left;
@@ -21,6 +23,7 @@ include("connect.php");
 
 <!-- //resultados buscador -->
 <?php 
+include("../DBConnection/connect.php")
 
 if (!isset($_POST['buscar'])){$_POST['buscar'] = '';}
 if (!isset($_REQUEST["mostrar_todo"])){$_REQUEST["mostrar_todo"] = '';}

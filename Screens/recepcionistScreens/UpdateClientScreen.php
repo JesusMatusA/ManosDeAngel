@@ -1,33 +1,35 @@
 <?php
-include("../Components/requeriments.php")
-?>
-<?php
-include("../Components/recepcionistStyles.php")
-?>
-<?php
-include("../Components/nav-container.php")
+  include("../../Components/requeriments.php");
+  include("../../Components/recepcionistComponents/recepcionistStyles.php");
+  include("../../Components/recepcionistComponents/nav-container.php");
 ?>
 
 <div class="bodyContainer">
   <div class="optionsContainer">
     <?php
-            include("../Components/barOptions-container.php")
-        ?>
+      include("../../Components/recepcionistComponents/barOptions-container.php");
+    ?>
   </div>
   <div class="showsContainer">
     <div class="screenOptionContainer">
       <div class="nameOptionContainer">
-        <div class="option">Registrar Cliente</div>
+        <div class="option">Actualizar Información del Cliente</div>
       </div>
-
       <div class="formContainer">
         <div class="formAdd">
           <form
-            action="../recepcionistFunctions/recepcionistAddClient.php"
+            action="../../recepcionistFunctions/recepcionistUpdateClient.php"
             method="post"
             class="form"
           >
             <div class="form">
+              <input
+                type="text"
+                placeholder="Id del cliente"
+                name="IdPatient"
+                id=""
+                class="inputTextDesign"
+              />
               <input
                 type="text"
                 placeholder="Nombres"
@@ -94,8 +96,6 @@ include("../Components/nav-container.php")
   </div>
 </div>
 <?php
-include("../Components/footer-container.php")
-?>
-<?php
-include("../Components/endCode.php")
+  include("../../Components/footer-container.php");
+  include("../../Components/endCode.php");
 ?>
