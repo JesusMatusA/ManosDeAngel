@@ -54,8 +54,8 @@
 
                             if($result->fetchColumn() > 0){
 
-                                $query = "SELECT Id_Paciente, nombres, aPaterno, aMaterno, correo, telefono FROM pacientes p 
-                                INNER JOIN citas c ON p.Id_Paciente=c.Id_Paciente 
+                                $query = "SELECT p.Id_Paciente, nombres, aPaterno, aMaterno, correo, telefono FROM pacientes p 
+                                INNER JOIN citas c ON p.Id_Paciente=c.Id_Paciente INNER JOIN
                                 ORDER BY Id_Paciente ASC LIMIT $desde,$por_pagina";
                                 foreach($connection->query($query) as $fila){
                                     ?>
